@@ -1,13 +1,578 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    font-family: 'Kumbh Sans', sans-serif;;
+}
+
+.header{
+   
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 20px 20px;
+  
+
+}
+
+.header-list{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 200px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    font-weight: 700;
+    gap: 20px;
+    padding: 20px 0 0 20px;
+}
+
+.header-list button{
+    border: none;
+    background-color: transparent;
+  
+    align-self: flex-start;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.header-list img{
+    pointer-events: none;
+}
+
+
+
+.header-component1, .header-component2{
+    display: flex;
+    align-items: center;
+
+}
+
+.header-component1{
+    gap: 10px;
+}
+
+.header-component2{
+    gap: 30px;
+}
+
+.header-component1 img{
+    align-self: center;
+}
+
+.menu{
+    margin-top: 8px;
+}
+
+.slider {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slide{
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+
+  .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }
+
+
+
+.left-arrow, .right-arrow{
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.image{
+    width: 100%;
+    /* height: 350px; */
+    border-radius: 10px;
+    object-fit: cover;
+ 
+  }
+
+.left-arrow{
+    left: 32px;
+}
+
+.right-arrow{
+    right: 32px;
+}
+
+
+
+
+
+.info {
+    width: 90%;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+
+.info h2{
+    color: hsl(26, 100%, 55%);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+
+.price{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.price p{
+    margin-left: auto;
+}
+
+.price2{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price2 span{
+    background-color: hsl(25, 100%, 94%);
+    padding: 3px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+
+ 
+}
+
+.price h2{
+   font-weight: 700;
+   font-size: 0.65rem;
+}
+
+.item-counter{
+    background-color: hsl(223, 64%, 98%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.item-counter p{
+    color: black;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.add-cart-btn, .checkout-btn{
+ 
+    border: none;
+    background-color:  hsl(26, 100%, 55%);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px ;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.add-cart-btn p, .checkout-btn p{
+    color: white;
+    font-weight: 700;
+}
+
+.add-cart-btn img{
+    filter: brightness(0) invert(1);
+    
+}
+
+
+
+  .cover.covering {
+    position: fixed;
+    top: 0;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(10, 9, 9, 0.39);
+    opacity: 0.6;
+   
+  }
+
+  .cart{
+    position: absolute;
+    background-color: white;
+    height: 310px;
+    left: 10px;
+    right: 10px;
+    top: 90px;
+    border-radius: 10px;
+    z-index: 9999;
+ 
+    
+  }
+
+  .cart-p{
+    margin: 20px;
+    font-weight: 700;
+  }
+
+  .cart img{
+    align-self: center;
+  }
+
+  .cart-info{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 30px auto;
+   
+  }
+
+  .limited-section{
+    align-self: center;
+  }
+
+  .checkout-btn{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .add-cart-btn{
+    width: 100%;
+  }
+
+
+  .display-quantity{
+    background-color:  hsl(26, 100%, 55%);
+    width: 18px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: x-small;
+    align-self: flex-end;
+    margin-bottom: -8px;
+    z-index: 9999;
+   
+  }
+
+  .cart-section{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 30px;
+  }
+
+  .cart-section img{
+    align-self: center;
+  }
+
+  .original-price{
+    color: grey;
+    font-weight: 700;
+  }
+
+  .limited-edition{
+    font-size: 1.5rem;
+    width: 90%;
+  }
+
+  .info p{
+    font-size: 0.7rem;
+    line-height: 20px;
+    
+  }
+
+  .info h2{
+    font-size: 0.6rem;
+  }
+
+  .price h1{
+    font-size: 1.3rem;
+  }
+
+  .Avatar{
+    height: 30px;
+  }
+
+  .desktop-header{
+    display: none;
+  }
+
+  .sneaker-img{
+    height: 60px;
+  }
+
+  .add-cart-btn{
+    cursor: pointer;
+  }
+
+
+
+  
+  .thumbnail{
+    display: none;
+  }
+
+
+
+
+
+@media(min-width: 1025px){
+    .image{
+    
+      border-radius: 20px;
+   
+     object-fit: contain;
+      
+    }
+
+    .left-arrow, .right-arrow{
+      display: none;
+    }
+
+    .slider{
+      justify-content: flex-start;
+      overflow: hidden;
+     
+  
+      border-radius: 20px;
+     
+    }
+
+    .select-sneaker-section{
+      width: 40%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .sneaker-info{
+      display: flex;
+      width: 1000px;
+      margin: 0 auto;
+      gap: 8rem;
+    
+      
+      
+    }
+
+    .info{
+      width: 50%;
+      
+    }
+
+    .info p{
+      font-size: 0.8rem;
+    }
+
+    .price h1{
+      font-size: 1.3rem;
+    }
+
+    .price2 h2{
+      font-size: 0.65rem;
+    }
+
+    
+    .btn-section{
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      width: 80%;
+      
+  
+
+    }
+
+    .item-counter{
+      width: 30%;
+      height: 40px;
+      margin-top: 0;
+    }
+
+    .add-cart-btn{
+      width: 50%;
+      height: 40px;
+      margin-top: 0;
+      
+    }
+
+    .info{
+      gap: 1.5rem
+    }
+
+    .original-price{
+      margin-right: 100%;
+      
+    }
+
+
+
+    .low-profile{
+      width: 90%;
+     
+    }
+
+   .menu{
+    display: none;
+   }
+
+   .price{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+   }
+
+   
+
+   .header{
+    width: 980px;
+    margin: 10px auto 80px;
+  
+    align-items: center;
+   
+   }
+
+   .header::after{
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 1px;
+    background-color: lightgray;
+    top: 80px
+   }
+
+   .cart{
+   width: 280px;
+   top: 60px;
+   height: 200px;
+   left: 70%;
+
+   box-shadow: -1px 23px 66px 1px rgba(0, 0, 0, 0.56);
+   
+   }
+
+   .limited-edition{
+    font-size: 2.3rem;
+   }
+
+  .info h2{
+     font-size: 1rem;
+   }
+
+   .desktop-header{
+    display: flex;
+    color: grey;
+    font-size: 0.9rem;
+    gap: 1.5rem;
+
+    
+   }
+
+   .header{
+    justify-content: flex-start;
+    gap: 5rem;
+   }
+
+   .header-component2{
+    margin-left: auto;
+   }
+
+   .desktop-header a {
+    text-decoration: none;
+    color: grey;
+    cursor: pointer;
+        
+   
+   }
+
+   a:hover::after {
+     content: '';
+     position: absolute;
+     top: 77px;
+     height: 4px;
+     background-color: hsl(26, 100%, 55%);
+     width: 50px;
+    
+   }
+
+   .Avatar{
+    height: 40px;
+    
+   }
+
+
+   .sneaker-img{
+    height: 40px;
+   }
+
+   .cart-info{
+    margin-top: 10px;
+   }
+
+   .cart-info p{
+    font-size: 0.8rem;
+    color: gray;
+   }
+
+   .checkout-btn{
+    padding: 15px;
+   }
+
+   .thumbnail{
+   
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 30px;
+  
+   }
+
+   .thumbnail img{
+    border-radius: 10px;
+   
+   }
+
+   .minus:hover, .add:hover{
+    opacity: 0.6;
+   }
+   .add-cart-btn:hover{
+    background-color:  hsl(26, 85%, 79%)
+   }
+
+   
+
 }
